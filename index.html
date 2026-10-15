@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Tells the phone: use the real screen width, don't zoom out -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home staging · tokens</title>
+
+  <!-- Load the tokens first, so everything below can use them -->
+  <link rel="stylesheet" href="tokens.css">
+
+  <style>
+    /* From here on: no hex codes, no raw sizes. Only var(--something). */
+
+    body {
+      margin: 0;
+      padding: var(--space-6) var(--screen-margin);
+      background: var(--color-ground);
+      color: var(--color-text);
+      font-family: var(--font);
+      font-size: var(--text-body-size);
+      line-height: var(--text-body-line);
+    }
+
+    h1 {
+      margin: 0 0 var(--space-6);
+      font-size: var(--text-large-title-size);
+      line-height: var(--text-large-title-line);
+      font-weight: var(--weight-bold);
+    }
+
+    .section-head {
+      margin: var(--space-8) 0 var(--space-2);
+      font-size: var(--text-footnote-size);
+      line-height: var(--text-footnote-line);
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* A white card on the grey ground, like every list in the app */
+    .card {
+      background: var(--color-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: var(--space-4);
+    }
+
+    /* Colour swatches: a 2-column grid with the 12px gutter */
+    .swatches {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--grid-gutter);
+    }
+    .swatch {
+      display: flex;          /* like a horizontal auto layout frame */
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .chip {
+      width: var(--tap-min);
+      height: var(--tap-min);
+      border-radius: var(--radius-field);
+      flex-shrink: 0;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .meta {
+      font-size: var(--text-footnote-size);
+      line-height: var(--text-footnote-line);
+      color: var(--color-secondary);
+    }
+
+    /* Type scale rows */
+    .type-row + .type-row { margin-top: var(--space-4); }
+    .large-title { font-size: var(--text-large-title-size); line-height: var(--text-large-title-line); font-weight: var(--weight-bold); }
+    .title       { font-size: var(--text-title-size);       line-height: var(--text-title-line);       font-weight: var(--weight-bold); }
+    .headline    { font-size: var(--text-headline-size);    line-height: var(--text-headline-line);    font-weight: var(--weight-semibold); }
+    .body        { font-size: var(--text-body-size);        line-height: var(--text-body-line); }
+    .subhead     { font-size: var(--text-subhead-size);     line-height: var(--text-subhead-line); }
+    .footnote    { font-size: var(--text-footnote-size);    line-height: var(--text-footnote-line); }
+
+    /* One real button, to see the action colour at work */
+    .button {
+      display: block;
+      width: 100%;
+      min-height: var(--tap-min);
+      margin-top: var(--space-6);
+      border: 0;
+      border-radius: var(--radius-button);
+      background: var(--color-action);
+      color: var(--color-card);
+      font: inherit;
+      font-weight: var(--weight-semibold);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Foundations</h1>
+
+  <p class="section-head">Colour</p>
+  <div class="card swatches">
+    <div class="swatch"><span class="chip" style="background: var(--color-accent)"></span><div>Accent<div class="meta">progress, selection</div></div></div>
+    <div class="swatch"><span class="chip" style="background: var(--color-action)"></span><div>Action<div class="meta">buttons, links</div></div></div>
+    <div class="swatch"><span class="chip" style="background: var(--color-text)"></span><div>Text<div class="meta">primary</div></div></div>
+    <div class="swatch"><span class="chip" style="background: var(--color-secondary)"></span><div>Secondary<div class="meta">meta</div></div></div>
+    <div class="swatch"><span class="chip" style="background: var(--color-positive)"></span><div>Under budget<div class="meta">positive money</div></div></div>
+    <div class="swatch"><span class="chip" style="background: var(--color-negative)"></span><div>Over / delete<div class="meta">overrun, destructive</div></div></div>
+    <div class="swatch"><span class="chip" style="background: var(--color-card)"></span><div>Card<div class="meta">rows, sheets</div></div></div>
+    <div class="swatch"><span class="chip" style="background: var(--color-ground)"></span><div>Ground<div class="meta">screen background</div></div></div>
+  </div>
+
+  <p class="section-head">Type</p>
+  <div class="card">
+    <div class="type-row"><div class="large-title">Staging checklist</div><div class="meta">Large title · 34/41 Bold</div></div>
+    <div class="type-row"><div class="title">Staging checklist</div><div class="meta">Title · 28/34 Bold</div></div>
+    <div class="type-row"><div class="headline">Staging checklist</div><div class="meta">Headline · 20/25 Semibold</div></div>
+    <div class="type-row"><div class="body">Staging checklist</div><div class="meta">Body · 17/22 Regular</div></div>
+    <div class="type-row"><div class="subhead">Staging checklist</div><div class="meta">Subhead · 15/20 Regular</div></div>
+    <div class="type-row"><div class="footnote">Staging checklist</div><div class="meta">Footnote · 13/18 Regular</div></div>
+  </div>
+
+  <button class="button">Add project</button>
+
+</body>
+</html>

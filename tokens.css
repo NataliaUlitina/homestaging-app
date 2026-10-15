@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* ============================================================
+   Home staging app - design tokens
+   Source: Figma "Orbit Style: Furnish Perfect", board UP 06 - Foundations
+   Every value below is copied from that board. If a value changes
+   in Figma, it changes here, and only here.
+   ============================================================ */
+
+:root {
+
+  /* ---------- COLOUR ----------
+     Named by role, not by look. "--color-action", not "--blue".
+     That way the button code never needs to know which blue it is. */
+
+  --color-accent:      #00AEEF; /* progress, selection (never under text) */
+  --color-action:      #006BA6; /* buttons, links - white on it = 5.7:1   */
+  --color-text:        #181818; /* primary text - 17.8:1                  */
+  --color-secondary:   #6E6E73; /* meta - 5.1:1                           */
+  --color-positive:    #137333; /* under budget - 6.0:1                   */
+  --color-negative:    #C62828; /* over budget, delete - 5.6:1            */
+  --color-card:        #FFFFFF; /* rows, sheets                           */
+  --color-ground:      #F5F5F5; /* screen background                      */
+
+
+  /* ---------- TYPE ----------
+     Font: SF Pro on Apple devices, Inter as the stand-in elsewhere.
+     "-apple-system" asks the browser for the system font, so on your
+     Mac and iPhone this is real SF Pro, the same as production. */
+
+  --font: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+
+  /* Each style = size / line height, exactly as on the board */
+  --text-large-title-size: 34px;  --text-large-title-line: 41px;  /* screen titles  */
+  --text-title-size:       28px;  --text-title-line:       34px;  /* detail headers */
+  --text-headline-size:    20px;  --text-headline-line:    25px;  /* card titles    */
+  --text-body-size:        17px;  --text-body-line:        22px;  /* rows, values   */
+  --text-subhead-size:     15px;  --text-subhead-line:     20px;  /* captions, chips */
+  --text-footnote-size:    13px;  --text-footnote-line:    18px;  /* meta, section heads */
+
+  --weight-regular:  400;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+
+  /* ---------- SPACING - 4pt step ---------- */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --screen-margin: 16px;
+  --grid-gutter:   12px;
+  --row-height:    48px;
+  --tap-min:       44px;  /* minimum tap target, 44 x 44 */
+
+
+  /* ---------- RADIUS ---------- */
+
+  --radius-field:  12px;
+  --radius-button: 14px;
+  --radius-card:   16px;
+  --radius-chip:   18px;
+  --radius-sheet:  20px;
+
+
+  /* ---------- ELEVATION ----------
+     Flat rows on a tinted ground; shadow only where a surface floats.
+     Figma "y1 b3 - 6%" = offset 0 1px, blur 3px, black at 6%. */
+
+  --shadow-card:  0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-sheet: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
